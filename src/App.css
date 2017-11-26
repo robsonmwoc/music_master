@@ -1,0 +1,42 @@
+body {
+  background: #38bbd7;
+}
+
+.App {
+  text-align: center;
+  padding: 5%;
+}
+
+img {
+  width: 200px;
+}
+
+.track-play {
+  width: 220px;
+  height: 220px;
+}
+
+.track-play-inner {
+  text-align: center;
+  font-seize: 25px;
+  background-color: black;
+  border-radius: 30px;
+  width: 60px;
+  height: 60px;
+  color: white;
+  padding-top: 13px;
+  padding-left: 80px;
+  /*margin-top: 80px;*/
+  opacity: 0;
+}
+
+.track-play-inner:hover {
+  opacity: 0.8;
+  animation-name: fade-in;
+  animation-duration: 0.5s;
+}
+
+@@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 0.8; }
+}
