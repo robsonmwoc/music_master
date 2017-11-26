@@ -3,15 +3,16 @@ import {
   Header,
   Grid,
   Form,
-  Icon
+  Icon,
+  Input,
+  Button
 } from 'semantic-ui-react';
 
 import './App.css';
 import Profile from './Profile';
 import Gallery from './Gallery';
 
-
-const ACCESS_TOKEN = 'BQBAzQvClg8OnCjjvkXkYIGTrpUul1K4HXSERajm3Yn6PnK13wFSgpDg7liEBWbCZNARj5J3cPCg03AeIxoWOCBifXeS-QB4aGu0H9pJ8FQuMbEhUzjlOiPKYVohEK8Tddz3PXlEmPCy8KeC8PJ_obSmiitCmkO6yweiLansISaHriE&refresh_token=AQClPeInwue693_9MEHSP24VD2niLFdK8SukRX-k-HEjAZz2ZDKNkmkw189mUp82dazo2jb-HzIEeiWcW8wAvfPrYM2NTfaTgzqBwL0EGGJQSMmx3f1FjVzcMK_RE43LyKw';
+const ACCESS_TOKEN = 'BQBj9Kmot_8PldVrlEYcQ3AgdMRuepQakooU_hFFhIUHfQakqoB4smfa8uVIdjz6eK6IHGNIP4G5QSx2D7bPhPuO-RD3AcR5jGtypX4_zpH5JR-_ydEyk1Vm2GQBVuief5U9Guh8GzKuZpq6I9P0iZbOigyO78adQ1lLjYvCWH4y6gU&refresh_token=AQA3D2rZbZ_nKponVegiCwh3VX-QatwLRNAKgdJYFFXxg7pC1hrf-eqBIYDO40XS34M3XX23jtX3wIfZSLOfBE5OuDw05We7texUR3ANiyFAqQ-tGd7T0H0Pcech-KBcQMc';
 const BASE_URL = 'https://api.spotify.com/v1/search';
 
 export default class App extends Component {
@@ -57,34 +58,39 @@ export default class App extends Component {
   render() {
     return (
       <div className='App'>
-        <Grid>
-          <Grid.Column>
-            <Header as='h1'>Music Master</Header>
+        <style>
+          {`
+            body > div,
+            body > div > div {
+              height: 100%;
+            }
+          `}
+        </style>
+        <Grid
+          textAlign='center'
+          style={{ height: '100%', marginTop: '50px' }}
+          verticalAlign='top'
+        >
+          <Grid.Column style={{ maxWidth: 600 }}>
+            <Header as='h1' className='app-title'>
+              <Icon name='music' className='app-logo' />
+              {' '}Music Master
+            </Header>
 
             <Form>
-              <Form.Input
-                type='text'
+              <Input
+                action={<Button content='Search' onClick={() => this.search()} />}
                 placeholder='Search for an Artist'
+                style={{ marginLeft: '-80px' }}
                 value={this.state.query}
-                onChange={event => {this.setState({query: event.target.value})}}
-                onKeyPress={event => {
-                  if (event.key === 'Enter') {
-                    this.search()
-                  }
-                }}
-              />
-              <Form.Button
-                icon='search'
-                onClick={() => this.search()}
+                onChange={event => { this.setState({ query: event.target.value }) }}
+                onKeyPress={event => { event.key === 'Enter' ? this.search() : '' }}
               />
             </Form>
 
-            { this.state.artist !== null ?
-              <Profile artist={this.state.artist} />
-              : <div></div>
-            }
-
+            <Profile artist={this.state.artist} />
             <Gallery tracks={this.state.tracks} />
+
           </Grid.Column>
         </Grid>
       </div>

@@ -2,13 +2,31 @@ body {
   background: #38bbd7;
 }
 
-.App {
-  text-align: center;
-  padding: 5%;
+.app-title {
+  color: #164e5b !important;
 }
 
-img {
-  width: 200px;
+.app-logo {
+  background: #164e5b;
+  color: white;
+  border-radius: 100px;
+  width: 60px !important;
+  height: 60px !important;
+  padding: 12px 3px 0px 0px !important;
+}
+
+.artist-profile {
+  text-align: left;
+  background: #2794ad;
+}
+
+.artist-profile .content {
+  padding-top: 10px !important;
+}
+
+.artist-profile .image {
+  width: 200px !important;
+  border: solid 5px white;
 }
 
 .track-play {

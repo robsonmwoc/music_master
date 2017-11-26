@@ -1,8 +1,12 @@
 import React, { Component } from 'react';
+import { Button, Icon, Image as ImageComponent, Item, Label } from 'semantic-ui-react'
+
 import './App.css';
 
 export default class Profile extends Component {
   render() {
+    if(this.props.artist === null) return '';
+
     let artist = {
       name: '',
       followers: { total: '' },
@@ -12,24 +16,23 @@ export default class Profile extends Component {
     artist = this.props.artist !== null ? this.props.artist : artist;
 
     return(
-      <div>
-        <img
-          alt='Profile'
-          className='profile-img'
-          src={artist.images[0].url}
-        />
-        <div>{artist.name}</div>
-        <div>{artist.followers.total}</div>
-        <div>{
-          artist.genres.map((genre, k) => {
-            genre = genre !== artist.genres[artist.genres.length - 1]
-                          ? ` ${genre},` : `& ${genre}`;
-            return(
-              <span key={k}>{genre}</span>
-            )
-          })
-        }</div>
-      </div>
+      <Item.Group divided className='artist-profile'>
+        <Item>
+          <Item.Image src={artist.images[0].url} />
+
+          <Item.Content>
+            <Item.Header as='h2' style={{ fontSize: '25px' }}>{artist.name}</Item.Header>
+            <Item.Meta>
+              <span>Followers: {artist.followers.total}</span>
+            </Item.Meta>
+            <Item.Extra>{
+              artist.genres.map((genre, k) => {
+                return (<Label key={k}>{genre}</Label>)
+              })
+            }</Item.Extra>
+          </Item.Content>
+        </Item>
+      </Item.Group>
     )
   }
 }
