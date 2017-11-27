@@ -17,4 +17,4 @@ Recently Spotify changed their rules for access their API. So, you'll need to fo
 * Set the `CLIEND_ID` and `SECRET` from Spotify in the file `/authorization_code/app.js`;
 * Enter the folder `/authorization_code` and run `node app.js`;
 * Access in the browser and perform the login;
-* Finally copy the `ACCESS_TOKEN` from the URL and paste in the `App.jsx` for this app.
+* Finally copy the `ACCESS_TOKEN` from the URL and paste in the `src/App.jsx` for this app.
