@@ -13,7 +13,7 @@ import Profile from './Profile';
 import Gallery from './Gallery';
 import Github from './Github';
 
-const ACCESS_TOKEN = 'BQAFcpO3sm87ifF3dpl0907Z2RwP3GnNDT9ClgFJrI3wQ5EXcWrs3NqiL66I9FrasjchtrKmWVk0NaGCITK9DRm6ZLP2kQhVVcDTlHeJrTMQqfIewzezZ0n4xgalOsEb73EByLlCp8A27TeB8DoyadGsoPSOR43YPhhemF-RMB77NPQ&refresh_token=AQD6qDuQNLfXOOl1YUYQbF-rCbxalUbdduxxbgT62mfJE01hzZUFuwrSHc75Y8zVivYNaXZSHd3BRHuCSuxdk2pC4UqVCorGqSI6E3d0_OMD-3Zh9Yb0gD_ygT2D33xNidY';
+const ACCESS_TOKEN = 'your_access_token';
 const BASE_URL = 'https://api.spotify.com/v1/search';
 
 export default class App extends Component {

@@ -43,7 +43,7 @@ export default class Gallery extends Component {
     if(this.state.playingUrl === track.preview_url) {
       return (<Icon name='pause' />);
     } else {
-      return(<Icon name='play' />)
+      return(<Icon name='play' />);
     }
   }
 
@@ -84,31 +84,3 @@ export default class Gallery extends Component {
     )
   }
 }
-
-// <div>
-//   {
-//     tracks.map((track, k) => {
-//       const trackImg = track.album.images[0].url;
-//
-//       return (
-//         <div
-//           key={k}
-//           className='track'
-//           onClick={() => this.playAudio(track.preview_url)}
-//         >
-//           <img src={trackImg} className='track-img' alt='track' />
-//           <div className='track-play'>
-//             <div className='track-play-inner'>
-//               {
-//                 this.state.playingUrl === track.preview_url
-//                 ? <span>| |</span>
-//                 : <span>&#9654;</span>
-//               }
-//             </div>
-//           </div>
-//           <p className='track-text'>{track.name}</p>
-//         </div>
-//       )
-//     })
-//   }
-// </div>
