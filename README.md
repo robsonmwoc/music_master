@@ -10,7 +10,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 Recently Spotify changed their rules for access their API. So, you'll need to follow these steps:
 
-* Create a Spotify developer account. You can do it using the OAuth with Facebook;
+* Create a Spotify developer account at [Developer Dashboard](https://developer.spotify.com/). You can do it using the OAuth with Facebook;
 * Create a new `Integration App` in the Spotify and get the `CLIEND_ID` and `SECRET`;
 * Configure the `Integration App` with a callback url, i.e `http://localhost:8888/callback`;
 * Clone this repo from Spotify: [web-api-auth-example](https://github.com/spotify/web-api-auth-examples);
