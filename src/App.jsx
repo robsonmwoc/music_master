@@ -12,7 +12,7 @@ import './App.css';
 import Profile from './Profile';
 import Gallery from './Gallery';
 
-const ACCESS_TOKEN = 'BQBj9Kmot_8PldVrlEYcQ3AgdMRuepQakooU_hFFhIUHfQakqoB4smfa8uVIdjz6eK6IHGNIP4G5QSx2D7bPhPuO-RD3AcR5jGtypX4_zpH5JR-_ydEyk1Vm2GQBVuief5U9Guh8GzKuZpq6I9P0iZbOigyO78adQ1lLjYvCWH4y6gU&refresh_token=AQA3D2rZbZ_nKponVegiCwh3VX-QatwLRNAKgdJYFFXxg7pC1hrf-eqBIYDO40XS34M3XX23jtX3wIfZSLOfBE5OuDw05We7texUR3ANiyFAqQ-tGd7T0H0Pcech-KBcQMc';
+const ACCESS_TOKEN = 'BQAFcpO3sm87ifF3dpl0907Z2RwP3GnNDT9ClgFJrI3wQ5EXcWrs3NqiL66I9FrasjchtrKmWVk0NaGCITK9DRm6ZLP2kQhVVcDTlHeJrTMQqfIewzezZ0n4xgalOsEb73EByLlCp8A27TeB8DoyadGsoPSOR43YPhhemF-RMB77NPQ&refresh_token=AQD6qDuQNLfXOOl1YUYQbF-rCbxalUbdduxxbgT62mfJE01hzZUFuwrSHc75Y8zVivYNaXZSHd3BRHuCSuxdk2pC4UqVCorGqSI6E3d0_OMD-3Zh9Yb0gD_ygT2D33xNidY';
 const BASE_URL = 'https://api.spotify.com/v1/search';
 
 export default class App extends Component {
@@ -71,7 +71,7 @@ export default class App extends Component {
           style={{ height: '100%', marginTop: '50px' }}
           verticalAlign='top'
         >
-          <Grid.Column style={{ maxWidth: 600 }}>
+          <Grid.Column style={{ maxWidth: '80%' }}>
             <Header as='h1' className='app-title'>
               <Icon name='music' className='app-logo' />
               {' '}Music Master
@@ -84,12 +84,12 @@ export default class App extends Component {
                 style={{ marginLeft: '-80px' }}
                 value={this.state.query}
                 onChange={event => { this.setState({ query: event.target.value }) }}
-                onKeyPress={event => { event.key === 'Enter' ? this.search() : '' }}
+                // onKeyPress={event => { event.key === 'Enter' ? this.search() : '' }}
               />
             </Form>
 
             <Profile artist={this.state.artist} />
-            <Gallery tracks={this.state.tracks} />
+            <Gallery tracks={this.state.tracks} artist={this.state.artist} />
 
           </Grid.Column>
         </Grid>

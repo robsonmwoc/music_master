@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button, Icon, Image as ImageComponent, Item, Label } from 'semantic-ui-react'
+import { Item, Label } from 'semantic-ui-react'
 
 import './App.css';
 

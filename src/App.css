@@ -29,32 +29,36 @@ body {
   border: solid 5px white;
 }
 
-.track-play {
-  width: 220px;
-  height: 220px;
+.track .card .header {
+  padding-top: 10px;
 }
 
-.track-play-inner {
-  text-align: center;
-  font-seize: 25px;
-  background-color: black;
-  border-radius: 30px;
-  width: 60px;
-  height: 60px;
+.track-button {
+  background: #164e5b;
   color: white;
-  padding-top: 13px;
-  padding-left: 80px;
-  /*margin-top: 80px;*/
+  border-radius: 100px;
+  width: 80px !important;
+  height: 80px !important;
+  padding: 12px 3px 0px 0px !important;
+  position: absolute;
+  top: 29%;
+  left: 35%;
   opacity: 0;
 }
 
-.track-play-inner:hover {
+.track-thumb:hover .track-button {
   opacity: 0.8;
   animation-name: fade-in;
-  animation-duration: 0.5s;
+  animation-duration: 0.7s;
 }
 
-@@keyframes fade-in {
+.track-button .icon {
+  font-size: 35px;
+  margin-left: 13px;
+  margin-top: 17px;
+}
+
+@keyframes fade-in {
   from { opacity: 0; }
   to { opacity: 0.8; }
 }
