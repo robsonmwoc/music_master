@@ -62,3 +62,18 @@ body {
   from { opacity: 0; }
   to { opacity: 0.8; }
 }
+
+@keyframes moving-button {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(0.35em); }
+    100% { transform: translateY(0); }
+}
+
+.github-button {
+  position: fixed;
+  margin: 2em;
+  bottom: 0;
+  left: 0;
+  animation: moving-button 1.5s ease-in-out infinite;
+  zIndex: 6;
+}
